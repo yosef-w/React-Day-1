@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-// import { Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import ButtonDisplay from './views/ButtonDisplay';
+import RacerDisplay from './views/RacerDisplay';
 
 function App() {
     let name = 'Brian';
@@ -10,7 +11,11 @@ function App() {
         <div className="App">
             <Navbar username={name} city={"Chicago"}/>
             <div className='container'>
-                <ButtonDisplay name={name} />
+                <Routes>
+                    <Route path='/' element={<ButtonDisplay name={name} />} />
+                    <Route path='/racers' element={<RacerDisplay />} />
+                </Routes>
+                
             </div>
         </div>
     );
