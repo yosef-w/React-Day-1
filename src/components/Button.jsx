@@ -1,13 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-export default function Button({ color, step }) {
-    
-    function handleClick(event){
-        console.log(event);
-        alert('Button has been clicked');
-    };
-
+export default function Button({ color, step, handleClick }) {
     return (
-        <button className={`btn btn-${color}`} onClick={handleClick}>+{step}</button>
+        <button className={`btn btn-${color}`} onClick={(e) => handleClick(step)}>+{step}</button>
     );
 };
